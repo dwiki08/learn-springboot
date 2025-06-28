@@ -28,11 +28,11 @@ dependencies {
 	implementation("io.jsonwebtoken:jjwt-impl:0.11.5")
 	implementation("io.jsonwebtoken:jjwt-jackson:0.11.5")
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9")
 
+	implementation("io.arrow-kt:arrow-core:2.1.2")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	runtimeOnly("org.postgresql:postgresql")
-//	runtimeOnly("io.arrow-kt:arrow-core:2.1.2")
-	implementation("io.arrow-kt:arrow-core:2.1.2")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
