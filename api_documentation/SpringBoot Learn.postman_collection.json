@@ -1,0 +1,1119 @@
+{
+	"info": {
+		"_postman_id": "49a14a20-96a8-43c4-a89d-af57d8e812a1",
+		"name": "SpringBoot Learn",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11170004"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Three\",\r\n    \"email\": \"john3@example.com\",\r\n    \"age\": 23,\r\n    \"phone\": \"+628123456789\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "### API Request: Create User\n\n**Method:** POST  \n**URL:** `http://localhost:8080/api/users`\n\n#### Headers\n\n- `Content-Type`: `application/json`  \n    This header indicates that the request body format is JSON.\n    \n\n#### Request Body\n\nThe request body must be in JSON format and should include the following parameters:\n\n- `email` (string): The email address of the user.\n    \n- `age` (integer): The age of the user.\n    \n- `phone` (string): The phone number of the user.\n    \n\n**Example Request Body:**\n\n``` json\n{\n  \"email\": \"john@example.com\",\n  \"age\": 25,\n  \"phone\": \"+628123456789\"\n}\n\n ```\n\n#### Response\n\nThe response will be in JSON format and may include the following fields:\n\n- `status`: A string indicating the status of the request.\n    \n- `message`: A string providing a message related to the request.\n    \n- `details`: A string containing additional details about the request.\n    \n\n**Example Response:**\n\n``` json\n{\n  \"status\": \"\",\n  \"message\": \"\",\n  \"details\": \"\"\n}\n\n ```\n\n#### Note\n\nThe last execution returned a status code of `500`, indicating a server error. Ensure that the request body is correctly formatted and that all required fields are included."
+					},
+					"response": [
+						{
+							"name": "Failed - Email already exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"John Two\",\r\n    \"email\": \"john2@example.com\",\r\n    \"age\": 20,\r\n    \"phone\": \"+628123456789\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:25:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Request failed\",\n    \"data\": null,\n    \"error\": \"Email john2@example.com sudah digunakan\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"John Three\",\r\n    \"email\": \"john3@example.com\",\r\n    \"age\": 23,\r\n    \"phone\": \"+628123456789\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:27:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User berhasil ditambahkan\",\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"John Three\",\n        \"email\": \"john3@example.com\",\n        \"age\": 23,\n        \"phone\": \"+628123456789\",\n        \"createdAt\": \"2025-06-28T17:27:51.694979\",\n        \"updatedAt\": \"2025-06-28T17:27:51.694979\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Johnny Sin\",\r\n    \"phone\": \"+6289888888\",\r\n    \"age\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/users/4",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"4"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT http://localhost:8080/api/users/1 \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"name\": \"John Updated\"}'"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Johny Updated\",\r\n    \"phone\": \"+62897464663\",\r\n    \"age\": 25\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/users/3",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:29:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User berhasil diupdate\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Johny Updated\",\n        \"email\": \"john@example.com\",\n        \"age\": 25,\n        \"phone\": \"+628123456789\",\n        \"createdAt\": \"2025-06-28T17:21:58.896451\",\n        \"updatedAt\": \"2025-06-28T17:29:08.657888800\"\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "Failed - ID not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Johny Updated\",\r\n    \"phone\": \"+62897464663\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/users/6",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"6"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:29:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Request failed\",\n    \"data\": null,\n    \"error\": \"User dengan ID 6 tidak ditemukan\"\n}"
+						},
+						{
+							"name": "Failed - Email not valid",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Johny Updated\",\r\n    \"phone\": \"+62897464663\",\r\n    \"email\": \"xxx\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/users/6",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"6"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:32:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Validation failed\",\n    \"errors\": {\n        \"email\": \"Format email tidak valid\"\n    }\n}"
+						},
+						{
+							"name": "Failed - Validation not match",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"J\",\r\n    \"phone\": \"+6289xxx\",\r\n    \"age\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/users/4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 13:30:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Validation failed\",\n    \"errors\": {\n        \"age\": \"Age minimal 17 tahun\",\n        \"phone\": \"Nomor telepon tidak valid\",\n        \"name\": \"Name harus antara 2-50 karakter\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/users/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						},
+						"description": "Generated from cURL: curl -X DELETE http://localhost:8080/api/users/1"
+					},
+					"response": [
+						{
+							"name": "Failed - ID not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/users/9",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"9"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:35:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Request failed\",\n    \"data\": null,\n    \"error\": \"User dengan ID 9 tidak ditemukan\"\n}"
+						},
+						{
+							"name": "Failed - Validation not match",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/users/0",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:36:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Validation failed\",\n    \"errors\": {\n        \"id\": \"ID harus lebih dari 0\"\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/users/3",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:38:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User berhasil dihapus\",\n    \"data\": null,\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:24:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 3,\n                \"name\": \"John Updated 22\",\n                \"email\": \"john@example.com\",\n                \"age\": 25,\n                \"phone\": \"+628123456789\",\n                \"createdAt\": \"2025-06-28T17:21:58.896451\",\n                \"updatedAt\": \"2025-06-28T17:22:13.831205\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"John Two\",\n                \"email\": \"john2@example.com\",\n                \"age\": 20,\n                \"phone\": \"+628123456789\",\n                \"createdAt\": \"2025-06-28T17:24:52.803361\",\n                \"updatedAt\": \"2025-06-28T17:24:52.803361\"\n            }\n        ],\n        \"total\": 2\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/users/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failed - ID not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/users/3",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:38:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Request failed\",\n    \"data\": null,\n    \"error\": \"User dengan ID 3 tidak ditemukan\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/users/4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 10:39:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"John Two\",\n        \"email\": \"john2@example.com\",\n        \"age\": 20,\n        \"phone\": \"+628123456789\",\n        \"createdAt\": \"2025-06-28T17:24:52.803361\",\n        \"updatedAt\": \"2025-06-28T17:24:52.803361\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hello",
+			"item": [
+				{
+					"name": "Hello",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/hello",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"hello"
+							]
+						},
+						"description": "### API Endpoint: `GET /api/hello`\n\nThis endpoint is designed to return a greeting message along with a timestamp. It serves as a simple test or health check for the API.\n\n#### Request Format\n\n- **Method**: GET\n    \n- **Request Body**: None required for this endpoint.\n    \n\n#### Response Format\n\n- **Status Code**: 200 OK\n    \n- **Content-Type**: application/json\n    \n- **Response Body**:\n    \n    - `message`: A string containing the greeting message.\n        \n    - `timestamp`: A string representing the time at which the request was processed.\n        \n\nExample Response:\n\n``` json\n{\n  \"message\": \"\",\n  \"timestamp\": \"\"\n}\n\n ```\n\nEnsure to handle the response appropriately in your application, as the `message` and `timestamp` fields will provide relevant information."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
